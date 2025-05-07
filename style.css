@@ -15,7 +15,6 @@
 }
 
 * {
-    background-color: var(--background);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -26,10 +25,12 @@
 }
 
 body {
+    background-color: var(--background);
     margin: 1rem 1.6rem 1rem 1rem;
 }
 
 .menu-header {
+    padding-top:5rem;
     position: fixed;
     z-index: 99;
     border-bottom: var(--main-color);
@@ -41,6 +42,7 @@ body {
 }
 
 .menu-header section {
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -54,20 +56,22 @@ body {
 }
 
 .nav-bar a {
-    color: var(--main-color);
-    border-bottom: var(--main-color);
+    color: var(--background);
+    font-family: Raleway;
+    background-color: transparent; /* evita blocos brancos */
+    padding: 0.5rem 1rem; /* opcional, para espaçamento interno elegante */
+    margin: 0rem 0.5rem;
+    border: none;
 }
-
 h1 {
     font-family:The Seasons, sans-serif;
     font-size: 3rem;
     color: var(--main-color);
     text-align: center;
-    margin: 1.5rem 1rem;
+    margin: 10rem 1rem 1rem;
 }
 
 p {
     font-family: "Raleway", sans-serif;
-
     font-size: 1.3rem;
 }
