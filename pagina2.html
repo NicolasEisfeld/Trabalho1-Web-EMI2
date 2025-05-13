@@ -11,19 +11,22 @@
       <section class="nav">
         <nav class="nav-bar">
           <a href="index.html"><img src="imagens/logo-menu.png" alt="Logo Casa Calabrese" class="logo"></a>
-          
           <a href="#home">Quem Somos</a>
           <a href="#galeria">Produtos</a>
           <a href="#contact">Contatos</a>
         </nav>
         <select id="list-produtos" name="Produtos" placeholder="fafafaf">
-          <option value="" disabled selected>Produto...</option>
+          <option id="option-empty" value="" disabled selected>Produto...</option>
           <option value="item1">Defumados</option>
           <option value="item2">Torrados</option>
           <option value="item3">Frescas</option>
           <option value="item4">Apimentadas</option>
         </select>
-        <input type="text" id="search-bar" placeholder="Buscar produto..." />
+        
+        <form id="search-form" action="resultado.html" method="GET">
+          <input type="text" id="search-bar" name="q" placeholder="Buscar produto..." required />
+        </form>
+
       </section>
 
     </header>
