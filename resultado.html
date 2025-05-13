@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Resultado da Busca</title>
+    <link rel="stylesheet" href="style2.css" />
+  </head>
+  <body>
+    <header class="menu-header">
+      <section class="nav">
+        <nav class="nav-bar">
+          <a href="index.html"
+            ><img
+              src="imagens/logo-menu.png"
+              alt="Logo Casa Calabrese"
+              class="logo"
+          /></a>
+          <a href="#home">Quem Somos</a>
+          <a href="#galeria">Produtos</a>
+          <a href="#contact">Contatos</a>
+        </nav>
+        <select id="list-produtos" name="Produtos" placeholder="fafafaf">
+          <option value="" disabled selected>Produto...</option>
+          <option value="item1">Defumados</option>
+          <option value="item2">Torrados</option>
+          <option value="item3">Frescas</option>
+          <option value="item4">Apimentadas</option>
+        </select>
+
+        <form id="search-form" action="resultado.html" method="GET">
+          <input
+            type="text"
+            id="search-bar"
+            name="q"
+            placeholder="Buscar produto..."
+            required
+          />
+        </form>
+      </section>
+    </header>
+
+    <h1>Resultado da Busca</h1>
+    <div id="resultado"></div>
+
+    <script>
+      const produtos = [
+        { nome: "salame", imagem: "imagens/salame.jpg" },
+        { nome: "linguiça", imagem: "imagens/linguiça.jpg" },
+        { nome: "bacon", imagem: "imagens/bacon.jpg" },
+        { nome: "torresmo", imagem: "imagens/torresmo.jpg" },
+        { nome: "salame2", imagem: "imagens/salame2.jpg" },
+        { nome: "chourico", imagem: "imagens/chourico.jpg" },
+      ];
+
+      const params = new URLSearchParams(window.location.search);
+      const termo = params.get("q")?.toLowerCase();
+
+      const resultado = document.getElementById("resultado");
+      const produtoEncontrado = produtos.find((p) =>
+        p.nome.toLowerCase().includes(termo)
+      );
+
+      if (produtoEncontrado) {
+        resultado.innerHTML = `
+        <h2>${produtoEncontrado.nome.toUpperCase()}</h2>
+        <img src="${produtoEncontrado.imagem}" alt="${produtoEncontrado.nome}">
+      `;
+      } else {
+        resultado.innerHTML = `<p class="not-found">Produto não encontrado.</p>`;
+      }
+    </script>
+  </body>
+</html>
