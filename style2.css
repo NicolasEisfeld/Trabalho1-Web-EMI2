@@ -76,6 +76,39 @@ body {
 }
 
 
+#list-produtos {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+#list-produtos:focus {
+  border-color: var(--main-color);
+  box-shadow: 0 0 0 2px rgba(214, 37, 37, 0.3);
+}
+
+select {
+  background-color: var(--background);
+  color: #000;
+  border-radius: 05%;
+  font-family: Raleway;
+  font-size: 0.9rem;
+  padding: 0.3rem;
+  margin: 1rem;
+  height: 2.25rem;
+}
+
+
+input {
+  font-family: Raleway;
+  font-size: 0.8rem;
+
+}
+
+
 .logo {
   height: 75px;
   width: auto;
@@ -95,6 +128,8 @@ p {
   text-align: center;
   margin: 1rem;
 }
+
+
 
 .contact-section {
   display: flex;
