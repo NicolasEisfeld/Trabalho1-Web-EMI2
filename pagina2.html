@@ -3,19 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style2.css" />
     <title>Casa Calabrese</title>
   </head>
   <body>
     <header class="menu-header">
       <section class="nav">
         <nav class="nav-bar">
-          <img src="imagens/logo-menu.png" alt="Logo Casa Calabrese" class="logo">
+          <a href="index.html"><img src="imagens/logo-menu.png" alt="Logo Casa Calabrese" class="logo"></a>
+          
           <a href="#home">Quem Somos</a>
           <a href="#galeria">Produtos</a>
           <a href="#contact">Contatos</a>
         </nav>
+        <select id="list-produtos" name="Produtos" placeholder="fafafaf">
+          <option value="" disabled selected>Produto...</option>
+          <option value="item1">Defumados</option>
+          <option value="item2">Torrados</option>
+          <option value="item3">Frescas</option>
+          <option value="item4">Apimentadas</option>
+        </select>
+        <input type="text" id="search-bar" placeholder="Buscar produto..." />
       </section>
+
     </header>
 
     <section id="home" class="introduction">
@@ -65,4 +75,21 @@
       </div>
     </section>
   </body>
+
+  <script>
+    document.getElementById('search-bar').addEventListener('input', function () {
+      const searchTerm = this.value.toLowerCase();
+      const images = document.querySelectorAll('.gallery-grid img');
+  
+      images.forEach(img => {
+        const altText = img.alt.toLowerCase();
+        if (altText.includes(searchTerm)) {
+          img.style.display = '';
+        } else {
+          img.style.display = 'none';
+        }
+      });
+    });
+  </script>
+  
 </html>

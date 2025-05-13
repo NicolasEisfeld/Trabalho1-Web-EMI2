@@ -1,0 +1,291 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --main-color: #d62525;
+  --background: #fffef9;
+  --menu: #8a1717;
+}
+
+@font-face {
+  font-family: The Seasons;
+  src: url("The-Seasons-Bold.otf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  text-decoration: none;
+  transition: 0.2s linear;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  text-align: center;
+  background-color: var(--background);
+  font-family: "Raleway", sans-serif;
+}
+
+.menu-header {
+  padding-top: 2rem;
+  position: fixed;
+  z-index: 99;
+  background-color: var(--menu);
+  top: 0;
+  right: 0;
+  left: 0;
+  border-bottom: 2px solid var(--main-color);
+}
+
+.menu-header section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0 0.5rem;
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-bar a {
+  color: var(--background);
+  font-weight: 600;
+  margin: 0 1rem;
+  font-size: 1.1rem;
+}
+
+.logo {
+  height: 75px;
+  width: auto;
+  margin-right: 2rem;
+}
+
+#search-bar {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+#search-bar:focus {
+  border-color: var(--main-color);
+  box-shadow: 0 0 0 2px rgba(214, 37, 37, 0.3);
+}
+
+.surgeGrad {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url("imagens/DaviBrito.jpg");
+  background-size: cover;
+  background-position: 60% center;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to right, #8a1717, #d625252a);
+  transform: translateX(-100%);
+  animation: slideGradient 2s ease-out forwards;
+  z-index: 1;
+}
+
+.surgeGrad-text {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  font-size: 6rem;
+  font-family: "Raleway", sans-serif;
+  color: white;
+  opacity: 0;
+  animation: fadeInText 2s ease-out 1.5s forwards;
+  z-index: 2;
+}
+
+.surgeGrad-text2 {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  font-size: 6rem;
+  font-family: "Raleway", sans-serif;
+  color: white;
+  opacity: 0;
+  animation: fadeInText 2s ease-out 1.5s forwards;
+  z-index: 2;
+  margin-top: 250px;
+}
+
+@keyframes slideGradient {
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+}
+
+@keyframes animated_DirToEsq {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.img_animated {
+  animation: animated_DirToEsq 0.85s ease-out forwards;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-family: "The Seasons", sans-serif;
+  font-size: 6rem;
+  color: var(--main-color);
+  text-align: center;
+  margin: 5rem 1rem 2.5rem;
+}
+
+p {
+  font-size: 3rem;
+  text-align: left;
+  margin: 2.5rem 1rem 10rem;
+}
+
+#home a {
+  font-size: 2rem;
+  color: #8a1717;
+}
+
+#herdeiro {
+  font-size: 1rem;
+}
+
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5rem;
+}
+
+.contact-title {
+  font-family: "The Seasons", sans-serif;
+  font-size: 3rem;
+  color: var(--main-color);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.contact-form-container {
+  width: 100%;
+  max-width: 600px;
+  padding: 2rem;
+  background-color: var(--menu);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.2s linear, box-shadow 0.2s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--main-color);
+  box-shadow: 0 0 0 2px rgba(214, 37, 37, 0.3);
+}
+
+.contact-form button {
+  background-color: var(--main-color);
+  color: white;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-family: "Raleway", sans-serif;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s linear, transform 0.1s ease;
+}
+
+.contact-form button:hover {
+  background-color: #b91c1c;
+}
+
+.contact-form button:active {
+  transform: scale(0.98);
+  background-color: #a31919;
+}
+
+.products-section {
+  margin: 4rem auto;
+  padding: 2rem;
+  max-width: 1200px;
+  text-align: center;
+}
+
+.gallery-title {
+  font-family: "The Seasons", sans-serif;
+  font-size: 2.5rem;
+  color: var(--main-color);
+  margin-bottom: 2rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.02);
+}
