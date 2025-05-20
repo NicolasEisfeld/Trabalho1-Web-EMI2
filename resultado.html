@@ -15,9 +15,7 @@
               alt="Logo Casa Calabrese"
               class="logo"
           /></a>
-          <a href="#home">Quem Somos</a>
-          <a href="#galeria">Produtos</a>
-          <a href="#contact">Contatos</a>
+          <a href="pagina2.html">Voltar a Página Principal</a>
         </nav>
         <select id="list-produtos" name="Produtos" placeholder="fafafaf">
           <option value="" disabled selected>Produto...</option>
@@ -44,12 +42,13 @@
 
     <script>
       const produtos = [
-        { nome: "salame", imagem: "imagens/salame.jpg" },
-        { nome: "linguiça", imagem: "imagens/linguiça.jpg" },
-        { nome: "bacon", imagem: "imagens/bacon.jpg" },
-        { nome: "torresmo", imagem: "imagens/torresmo.jpg" },
-        { nome: "salame2", imagem: "imagens/salame2.jpg" },
-        { nome: "chourico", imagem: "imagens/chourico.jpg" },
+        { nome: "Salame", imagem: "imagens/salame.jpg" },
+        { nome: "Linguiça", imagem: "imagens/linguiça.jpg" },
+        { nome: "Bacon", imagem: "imagens/bacon.jpg" },
+        { nome: "Torresmo", imagem: "imagens/torresmo.jpg" },
+        { nome: "Salame2", imagem: "imagens/salame2.jpg" },
+        { nome: "Chourico", imagem: "imagens/chourico.jpg" },
+        { nome: "Davi Brito", imagem: "imagens/davibrito.jpg" },
       ];
 
       const params = new URLSearchParams(window.location.search);
@@ -62,9 +61,10 @@
 
       if (produtoEncontrado) {
         resultado.innerHTML = `
-        <h2>${produtoEncontrado.nome.toUpperCase()}</h2>
-        <img src="${produtoEncontrado.imagem}" alt="${produtoEncontrado.nome}">
-      `;
+
+          <h2 id="titulo-resultado">${produtoEncontrado.nome}</h2>
+          <img  width="960" height="640,5" id="imagem-resultado" src="${produtoEncontrado.imagem}" id="imagem" alt="${produtoEncontrado.nome}">
+        `;
       } else {
         resultado.innerHTML = `<p class="not-found">Produto não encontrado.</p>`;
       }
